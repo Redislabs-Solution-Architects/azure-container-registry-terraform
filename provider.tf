@@ -10,12 +10,4 @@ terraform {
       version = ">= 2.80.0"
     }
   }
-
-  backend "remote" {
-    organization = "dashaun-cloud"
-
-    workspaces {
-      name = "github-actions"
-    }
-  }
 }
