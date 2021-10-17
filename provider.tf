@@ -1,13 +1,17 @@
 terraform {
-  required_version = ">= 1.0.8"
   required_providers {
     random = {
-      source  = "hashicorp/random"
-      version = "3.1.0"
+      source = "hashicorp/random"
     }
     azurerm = {
-      source  = "hashicorp/azurerm"
-      version = ">= 2.80.0"
+      source = "hashicorp/azurerm"
     }
+  }
+  backend "remote" {}
+}
+
+provider "azurerm" {
+  environment = var.cloud_name
+  features {
   }
 }
