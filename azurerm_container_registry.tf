@@ -4,4 +4,5 @@ resource "azurerm_container_registry" "acr" {
   location            = azurerm_resource_group.resource_group.location
   sku                 = "Premium"
   admin_enabled       = false
+  tags                = merge(var.tags, { owner = data.azurerm_client_config.current.client_id })
 }
